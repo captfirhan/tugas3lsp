@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>{% block title%} {% endblock%}</title>
+	<style type="text/css">
+		*{
+			font-family: helvetica;
+			font-size: 25px;
+		}
+		.nav {
+			background-color: rgb(63,94,251);
+			background-color: radial-gradient(circle, rgba(63,94,251,1) 0%, rgba(252,70,107,1) 100%);
+			padding: 7px;
+		}
+		.nav a{
+			color: white;
+		}
+	</style>
+</head>
+<body>
+	<CENTER>
+		<div class="nav">
+			<a href="{% url 'home' %}">Home</a>
+			<a href="{% url 'create' %}">Create</a>
+		</div>
+		{% block content%} {% endblock%}
+	</CENTER>
+
+</body>
+</html>

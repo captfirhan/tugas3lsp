@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block title %}Create Page{% endblock%}
+
+
+{% block content %}
+<h1>Create New Poll</h1>
+<FORM method="POST" action="{% url 'create' %}">
+	{% csrf_token%}
+	<table>
+		{{fm.as_table}}
+	</table>
+		<input type="submit" value="Save">
+</FORM>
+{{msg}}
+
+{% endblock %}

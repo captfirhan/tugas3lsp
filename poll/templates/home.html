@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block title %}Home Page{% endblock%}
+
+
+{% block content %}
+	<h1>Available Polls</h1>
+	<hr>
+	{% for d in data %}
+		<h1>{{d.question}}</h1>
+		<button><a href="{% url 'vote' id=d.id%}">Vote</a></button>
+		<button><a href="{% url 'results' id=d.id%}">View Result</a></button>
+		<br><hr>
+	{% empty %}
+		<h1>No Polls Available</h1>
+	{% endfor%}
+{% endblock %}
